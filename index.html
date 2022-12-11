@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Idle Web Designer</title>
+</head>
+
+<body>
+    
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+    <div id="stage0">
+        <p>Idle Web Designer</p>
+        <button onclick="game.increment();">Program</button>
+        <p>Lines of code: <span class="lineOutput">0</span></p>
+
+    </div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+    <div id="stage1">
+        <h1>Idle Web Designer</h1>
+        <button onclick="game.increment();">Program</button>
+        <p>Lines of code: <span class="lineOutput">0</span></p>
+        
+        <p>--Upgrades--</p>
+        <ul>
+            <li><button onclick="game.purchasePerClick('water');">Water</button> - <span class="waterCost"></span> lines <br> +1 line per click</li>
+        </ul>
+        
+        <p>+<span class="perClickOut">0</span> lines per click, +<span class="perSecOut">0</span> per second.</p>
+    </div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+    <div id="stage2">
+        <h1>Idle Web Designer</h1>
+        <h4>BREAKING NEWS: A colony of mold formed on a man's toilet has gained sentience and is trying to comprehend the otherworldly horrors of JavaScript!</h4>
+
+        <button onclick="game.increment();">Program</button>
+        <p>Lines of code: <span class="lineOutput">0</span></p>
+        
+        <p>--LpC Upgrades--</p>
+        <ul>
+            <li><button onclick="game.purchasePerClick('water');">Water</button> - <span class="waterCost"></span> lines <br> +1 line per click</li>
+            <li><button onclick="game.purchasePerClick('tea');">Tea</button> - <span class="teaCost"></span> lines <br> +2 lines per click</li>
+            <li><button onclick="game.purchasePerClick('coffee');">Coffee</button> - <span class="coffeeCost"></span> lines <br> +3 lines per click</li>
+        </ul>
+        <p>--LpS Upgrades--</p>
+        <ul>
+            <li><button onclick="game.purchasePerSec('stackoverflow');">StackOverflow</button> - <span class="stackoverflowCost"></span> lines <br> +3 lines per second</li>
+        </ul>
+
+        <p>+<span class="perClickOut">0</span> lines per click, +<span class="perSecOut">0</span> per second.</p>
+    </div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
+    
+
+    <script src="./assets/game.js"></script>
+    <script src="./assets/script.js"></script>
+</body>
+
+</html> 
+
