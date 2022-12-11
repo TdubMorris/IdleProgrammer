@@ -1,4 +1,4 @@
-# IdleProgrammer
+# IdleWebDesigner
 
 MAJOR WIP - Don't play this. It's terrible.
 
