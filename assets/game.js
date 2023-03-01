@@ -4,12 +4,13 @@ var Game = function () {
     this.perSec = 0;
 
     this.maxvaluelines = this.lines;
+    this.currentWebLevel = 0
 
-    this.websiteupgrades = {
-        0: "stage0",
-        100: "stage1",
-        1000: "stage2",
-    };
+    this.websiteupgrades = [
+        {"cost" : 0, "name" : "stage0"},
+        {"cost" : 100, "name" : "stage1"},
+        {"cost" : 1000, "name" : "stage2"},
+    ];
 
     this.basecosts = {
         "water": 100,
@@ -22,7 +23,7 @@ var Game = function () {
         "water": 1,
         "tea": 2,
         "coffee": 3,
-        "stackoverflow": 2,
+        "stackoverflow": 3,
     }
 
     this.priceMultipliers = {
@@ -50,7 +51,7 @@ var Game = function () {
     }
 
     let _this = this;
-    setInterval(function() {
+    setInterval(function () {
         _this.lines += _this.perSec;
         _this.update();
     }, 1000);
@@ -72,19 +73,34 @@ Game.prototype.update = function () {
         }
     }
 
-    for (var i in this.websiteupgrades) {
-        if (this.maxvaluelines >= i) {
-            // Hide all stages, then show the current one
-            for (var j in this.websiteupgrades) {
-                document.getElementById(this.websiteupgrades[j]).style.display = "none";
-            }
-            document.getElementById(this.websiteupgrades[i]).style.display = "block";
-        }
-    }
-
     if (this.lines > this.maxvaluelines) {
         this.maxvaluelines = this.lines;
     }
+
+    // Check if the user is on the last level
+    if (this.currentWebLevel == Object.keys(this.websiteupgrades).length - 1) {
+        document.getElementById("WebUpgrade").style.display = "none";
+    } else {
+        if (this.lines >= this.websiteupgrades[this.currentWebLevel + 1]["cost"]) {
+            document.getElementById("WebUpgrade").style.display = "block"; 
+        } else {
+            document.getElementById("WebUpgrade").style.display = "none"; 
+        }
+    }
+}
+
+Game.prototype.upgradeWeb = function () {
+    for (var i in this.websiteupgrades) {
+        if (this.maxvaluelines >= this.websiteupgrades[i]["cost"]) {
+            // Hide all stages, then show the current one
+            for (var j in this.websiteupgrades) {
+                document.getElementById(this.websiteupgrades[j]["name"]).style.display = "none";
+            }
+            document.getElementById(this.websiteupgrades[i]["name"]).style.display = "block";
+            this.currentWebLevel = parseInt(i);
+        }
+    }
+    this.update();
 }
 
 Game.prototype.purchasePerClick = function (item) {

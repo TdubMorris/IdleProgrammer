@@ -10,3 +10,32 @@
     padding: 10px;
     border: 1px solid #000;
 }
+
+#bottombar {
+    position: fixed;
+    bottom: 0;
+    padding: 20px;
+}
+
+#WebUpgrade {
+    width: 100px;
+    height: 30px;
+    -webkit-box-shadow: 0 0 10px rgb(0, 217, 224);
+    -moz-box-shadow: 0 0 10px rgb(0, 217, 224);
+    box-shadow: 0 0 10px rgb(0, 217, 224);
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
